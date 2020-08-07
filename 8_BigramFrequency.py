@@ -1,5 +1,5 @@
 def bigram_frequency_analyzer(text):
-  text = text.split(" ")
+  text = text.split() #text.split(" ") leads to an extra white space being included in the list, which we dont want
   dict = {}
   for x in range(len(text)-2):
     temp = str(text[x]) + " " + str(text[x+1])
