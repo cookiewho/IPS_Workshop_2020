@@ -1,4 +1,21 @@
+###NEW AND IMPROVED SOLUTION, MUCH MORE EFFICEINT###
+def lengthOfLastWord(string):
+  for x in range(len(string)):
+    if string[x] == " ":
+      count = 0
+      for y in range(x+1,len(string)):
+        if string[y] == " ":
+          x = y
+          break
+        else:
+          count += 1 
+      return count
+  return 0
+sampleInput = "Hello World"
+print(lengthOfLastWord(sampleInput))
+
 def length_of_last_word(words):
+  ###OLD SOLUTION, BAD AND ICKY AND INEFFICIENT###
   start = 0
   stop = -1
   found = False
