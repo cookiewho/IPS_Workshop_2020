@@ -40,7 +40,17 @@ class LinkedList:
   # return true if there is a cycle in this linked list
   ###CODE BELOW IS MINE, REST WAS PROVIDED###
   def has_cycle(self):
-    return self.tail.next != None
+    #return self.tail.next != None  ### DOESNT WORK BECAUSE CYCLE CAN BE IN THE MIDDLE OF LINKED LIST###
+    if self.tail.next != None:
+      return True
+    visited = set()
+    curr = self.head
+    while curr.next!= None:
+      if curr in visited:
+        return True
+      visited.add(curr)
+      curr = curr.next
+    return False
 
 ll = LinkedList()
 ll.extend([1, 2, 3, 4, 5, 6])
