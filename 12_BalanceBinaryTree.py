@@ -81,6 +81,7 @@ class Tree:
   #         self.right = right
   '''
   class Solution:
+  ### EVERYTHING BELOW IS MINE ###
   ### LEET CODE APPROVED ###
       def balanceBST(self, root: TreeNode) -> TreeNode:
           order = []
@@ -91,7 +92,7 @@ class Tree:
                   dfs_list(node.right)
           dfs_list(root)
           def recur(start, end):
-  ### EVERYTHING BELOW IS MINE ###
+  
               if start>end:
                   return None
 
@@ -116,16 +117,18 @@ class Tree:
     dfs_list(self.root)
     print(order)
     ### RECURSIVE APPROACH WITH SOME HELP  ###
-    def recur(order, start, end):
+    def recur(start, end):
       if start>end:
-        return None
+          return None
 
       mid = (start+end)//2
-      self.root= Node(order[mid])
+      node= Node(order[mid])
 
-      root.left = recur(order, 0, mid-1)
-      root.right = recur(order, mid+1, end)
-      return root
+      node.left = recur(start, mid-1)
+      node.right = recur(mid+1, end)
+      return node
+    self.root = recur(0, len(order)-1)
+    return self.root
     ''' 
     ### ITERATIVE APPROACH BY MYSELF  ###
     mid = (len(order)-1)//2
