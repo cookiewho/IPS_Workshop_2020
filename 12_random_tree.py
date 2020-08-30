@@ -26,9 +26,12 @@ class Tree:
         values.append(node.data)
         if node.left != None:
           recurr(node.left)
+
         if  node.right != None:
           recurr(node.right)
+          
     recurr(self.root)
+
   def add(self,node):
     if not self.root:
       self.root = node
